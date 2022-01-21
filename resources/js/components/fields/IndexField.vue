@@ -1,11 +1,11 @@
 <template>
   <div v-if="field.type === 'media'">
-    <CoolLightBox 
-      :items="[imageUrl]" 
+    <CoolLightBox
+      :items="[imageUrl]"
       :index="index"
       @close="index = null">
     </CoolLightBox>
-    <img v-if="value" :src="imageUrl" style="object-fit: cover;" class="rounded-full w-8 h-8" />
+    <img v-if="value" :src="imageUrl" style="object-fit: cover;" class="rounded-full w-64 h-64" />
     <span v-else>&mdash;</span>
   </div>
   <div v-else>
@@ -17,8 +17,12 @@
 </template>
 
 <script>
+
   export default {
     props: ['resourceName', 'field'],
+    components: {
+      CoolLightBox,
+    },
     computed: {
       value() {
         return this.field.value[0];
