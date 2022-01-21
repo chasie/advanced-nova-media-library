@@ -1,6 +1,6 @@
 <?php
 
-namespace Ebess\AdvancedNovaMediaLibrary;
+namespace Chasie\AdvancedNovaMediaLibrary;
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
