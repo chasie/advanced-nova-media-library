@@ -24,6 +24,7 @@
         "rxjs": "^6.6.6",
         "slug": "^0.9.1",
         "vue": "^2.5.17",
+        "vue-cool-lightbox": "^2.7.4",
         "vue-rx": "^6.2.0",
         "vuedraggable": "^2.16.0",
         "vuejs-clipper": "^3.1.2"

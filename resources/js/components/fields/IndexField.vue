@@ -1,5 +1,10 @@
 <template>
   <div v-if="field.type === 'media'">
+    <CoolLightBox 
+      :items="[imageUrl]" 
+      :index="index"
+      @close="index = null">
+    </CoolLightBox>
     <img v-if="value" :src="imageUrl" style="object-fit: cover;" class="rounded-full w-8 h-8" />
     <span v-else>&mdash;</span>
   </div>
@@ -22,5 +27,10 @@
         return this.value.__media_urls__.indexView;
       },
     },
+    data: function () {
+      return {
+        index: null
+    };
+  },
   };
 </script>
