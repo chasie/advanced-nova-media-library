@@ -1,11 +1,22 @@
 <template>
   <div v-if="field.type === 'media'">
-    <CoolLightBox
-      :items="[imageUrl]"
-      :index="index"
-      @close="index = null">
-    </CoolLightBox>
-    <img v-if="value" :src="imageUrl" style="object-fit: cover;" class="rounded w-64 h-64" />
+    <div v-if="value">
+      <CoolLightBox
+        :items="[imageUrl]"
+        @close="index = null">
+      </CoolLightBox>
+      <div class="images-wrapper">
+        <div
+          class="image rounded w-64 h-64"
+          @click="index = 1"
+          :style="{
+          objectFit: 'cover',
+          backgroundImage: 'url(' + imageUrl + ')'
+        }"
+        ></div>
+      </div>
+    </div>
+<!--    <img v-if="value" :src="imageUrl" style="object-fit: cover;" class="rounded w-64 h-64" />-->
     <span v-else>&mdash;</span>
   </div>
   <div v-else>
